@@ -1,0 +1,205 @@
+/* ================================================================
+   ABOUT.CSS — Styles propres à la page À propos
+   Réutilise les tokens (:root), boutons (.btn), header/footer
+   déjà définis dans style.css.
+   ================================================================ */
+
+/* ================================================================
+   SECTION 1 — NOTRE HISTOIRE
+   ================================================================ */
+.about-hero {
+  background: var(--color-bg);
+  padding: 48px 32px 88px;
+}
+
+.about-hero__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-hero__eyebrow {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-hero__title {
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+}
+
+.about-hero__text {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.about-hero__text:last-child {
+  margin-bottom: 0;
+}
+
+.about-hero__media {
+  width: 100%;
+}
+
+.about-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+.about-hero__img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  background: linear-gradient(145deg, var(--color-accent-light), var(--color-bg-soft));
+  border: 2px dashed var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 24px;
+}
+
+/* ================================================================
+   SECTION 2 — NOS VALEURS
+   ================================================================ */
+.about-values {
+  background: var(--color-bg-soft);
+  padding: 88px 32px;
+}
+
+.about-values__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.about-value-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.about-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.about-value-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  font-size: 22px;
+}
+
+.about-value-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.about-value-card__text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ================================================================
+   SECTION 3 — BANDEAU CTA
+   ================================================================ */
+.about-cta {
+  background: var(--color-brown-deep);
+  padding: 72px 32px;
+  text-align: center;
+}
+
+.about-cta__container {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.about-cta__title {
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.about-cta__text {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 28px;
+}
+
+/* ================================================================
+   RESPONSIVE — PAGE À PROPOS
+   ================================================================ */
+@media (max-width: 900px) {
+  .about-hero {
+    padding: 32px 20px 64px;
+  }
+
+  .about-hero__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-hero__eyebrow,
+  .about-hero__title,
+  .about-hero__text {
+    text-align: center;
+  }
+
+  .about-hero__media {
+    order: -1;
+  }
+
+  .about-values {
+    padding: 64px 20px;
+  }
+
+  .about-values__grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+
+  .about-cta {
+    padding: 56px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-values__grid {
+    grid-template-columns: 1fr;
+  }
+}

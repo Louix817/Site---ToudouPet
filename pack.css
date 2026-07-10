@@ -1,0 +1,57 @@
+/* ================================================================
+   PACK.CSS — Styles additionnels propres à la fiche Pack Duo
+   S'ajoute à product.css (structure Buy Box / galerie réutilisée).
+   ================================================================ */
+
+/* --- Badge "Meilleure offre" en haut de la Buy Box --- */
+.buy-box__pack-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  background: var(--color-brown-deep);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+/* --- Sous-titre : composition du pack --- */
+.buy-box__pack-subtitle {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+/* --- Bloc prix barré + prix final + badge d'économie --- */
+.buy-box__price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.buy-box__price-old {
+  font-size: 17px;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+/* Réutilise .buy-box__price (déjà stylé dans product.css) pour le prix final */
+.buy-box__price-row .buy-box__price {
+  margin-bottom: 0;
+}
+
+.buy-box__savings-badge {
+  background: var(--color-accent-light);
+  color: var(--color-brown-deep);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
