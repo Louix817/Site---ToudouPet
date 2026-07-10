@@ -133,7 +133,7 @@ button {
 /* --- Navigation desktop --- */
 .site-header__nav {
   display: flex;
-  gap: 36px;
+  gap: 28px;
   flex: 1;
   justify-content: center;
 }
@@ -272,7 +272,7 @@ button {
 /* ================================================================
    RESPONSIVE — Mobile / Tablette
    ================================================================ */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .site-header__nav {
     display: none;
   }

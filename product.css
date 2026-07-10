@@ -305,6 +305,16 @@
   color: var(--color-text-muted);
 }
 
+.pdp-inline-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent-light);
+}
+
+.pdp-inline-link:hover {
+  border-color: var(--color-accent);
+}
+
 .pdp-accordion__item.is-open .pdp-accordion__answer p {
   padding-bottom: 16px;
 }
