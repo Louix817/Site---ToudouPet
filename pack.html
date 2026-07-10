@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo.png">
+<title>Pack Bien-être (Duo) — ToudouPet</title>
+<meta name="description" content="Le duo complet pour un toilettage sans effort : Brosse Autonettoyante + Brosse à Vapeur. Économisez 5€ par rapport à l'achat séparé.">
+<link rel="canonical" href="https://www.toudoupet.fr/pack.html">
+
+<!-- Open Graph (partage Facebook, Instagram, LinkedIn...) -->
+<meta property="og:type" content="product">
+<meta property="og:title" content="Pack Bien-être (Duo) — ToudouPet">
+<meta property="og:description" content="Le duo complet pour un toilettage sans effort : Brosse Autonettoyante + Brosse à Vapeur. Économisez 5€ par rapport à l'achat séparé.">
+<meta property="og:image" content="https://www.toudoupet.fr/logo.png">
+<meta property="og:url" content="https://www.toudoupet.fr/pack.html">
+<meta property="og:site_name" content="ToudouPet">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pack Bien-être (Duo) — ToudouPet">
+<meta name="twitter:description" content="Le duo complet pour un toilettage sans effort : Brosse Autonettoyante + Brosse à Vapeur. Économisez 5€ par rapport à l'achat séparé.">
+<meta name="twitter:image" content="https://www.toudoupet.fr/logo.png">
+
+<!-- Schema.org — Product (permet l'affichage du prix/note dans Google) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Pack Bien-être (Duo) ToudouPet",
+  "description": "Brosse Autonettoyante + Brosse à Vapeur, pour une routine de toilettage complète. Économisez 5€ par rapport à l'achat séparé.",
+  "brand": { "@type": "Brand", "name": "ToudouPet" },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "price": "34.99",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.toudoupet.fr/pack.html"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "52"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- style.css : tokens partagés (couleurs, boutons, header, footer) -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+<!-- product.css : structure Buy Box / galerie, réutilisée telle quelle -->
+<link rel="stylesheet" href="product.css">
+<!-- pack.css : styles additionnels propres au Pack (prix barré, badge) -->
+<link rel="stylesheet" href="pack.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER PARTAGÉ — identique à la page d'accueil
+     ============================================================ -->
+<div class="announcement-bar">
+  <div class="announcement-bar__track">
+    <span class="announcement-bar__item">🚚 Livraison offerte dès 30€</span>
+    <span class="announcement-bar__item">⭐ +100 clients satisfaits</span>
+    <span class="announcement-bar__item">🔒 Paiement 100% sécurisé</span>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__container">
+
+    <button class="site-header__burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-header__logo">
+      <img src="logo.png" alt="ToudouPet" class="site-header__logo-img">
+      ToudouPet
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navigation principale">
+      <a href="index.html" class="site-header__link">Accueil</a>
+      <a href="catalogue.html" class="site-header__link">Catalogue</a>
+      <a href="guide.html" class="site-header__link">Guide d'utilisation</a>
+      <a href="about.html" class="site-header__link">À propos</a>
+      <a href="contact.html" class="site-header__link">Contact</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="site-header__icon-btn" aria-label="Mon compte" title="Mon compte (bientôt disponible)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+
+      <button class="site-header__icon-btn site-header__cart" id="cartIconBtn" aria-label="Panier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <path d="M3 6h18"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="site-header__cart-count">0</span>
+      </button>
+    </div>
+
+  </div>
+
+  <nav class="site-header__mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <a href="index.html" class="site-header__mobile-link">Accueil</a>
+    <a href="catalogue.html" class="site-header__mobile-link">Catalogue</a>
+    <a href="guide.html" class="site-header__mobile-link">Guide d'utilisation</a>
+    <a href="about.html" class="site-header__mobile-link">À propos</a>
+    <a href="contact.html" class="site-header__mobile-link">Contact</a>
+  </nav>
+</header>
+<!-- ============================================================
+     PANIER COULISSANT (CART DRAWER) — partagé par toutes les pages
+     ============================================================ -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__overlay" id="cartOverlay"></div>
+  <div class="cart-drawer__panel">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Votre panier</h2>
+      <button class="cart-drawer__close" id="cartCloseBtn" aria-label="Fermer le panier">×</button>
+    </div>
+
+    <div class="cart-drawer__items" id="cartItems"></div>
+    <p class="cart-drawer__empty" id="cartEmpty" hidden>Votre panier est vide pour l'instant.</p>
+
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__subtotal">
+        <span>Sous-total</span>
+        <span id="cartSubtotal">0,00 €</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="cartCheckoutBtn">
+        Commander <span aria-hidden="true">🐾</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     FIL D'ARIANE — repère l'utilisateur, bon pour le SEO
+     ============================================================ -->
+<nav class="breadcrumb" aria-label="Fil d'ariane">
+  <a href="index.html" class="breadcrumb__link">Accueil</a>
+  <span class="breadcrumb__sep" aria-hidden="true">/</span>
+  <a href="catalogue.html" class="breadcrumb__link">Catalogue</a>
+  <span class="breadcrumb__sep" aria-hidden="true">/</span>
+  <span class="breadcrumb__current">Pack Bien-être (Duo)</span>
+</nav>
+
+<!-- ============================================================
+     SECTION 1 — GALERIE + BUY BOX (Fiche produit)
+     Objectif : convertir l'intérêt en achat, sans friction
+     ============================================================ -->
+<section class="product-hero">
+  <div class="product-hero__container">
+
+    <!-- --- Galerie image --- -->
+    <div class="product-gallery">
+      <div class="product-gallery__main">
+        <!-- REMPLACER PAR : <img src="assets/pack-duo-1.jpg" alt="Pack Bien-être ToudouPet - les 2 brosses" class="product-gallery__img"> -->
+        <div class="product-gallery__placeholder" id="galleryMain">📸 Photo du pack complet</div>
+      </div>
+      <div class="product-gallery__thumbs">
+        <button class="product-gallery__thumb is-active" aria-label="Voir la vue 1">
+          <div class="product-gallery__thumb-placeholder">1</div>
+        </button>
+        <button class="product-gallery__thumb" aria-label="Voir la vue 2">
+          <div class="product-gallery__thumb-placeholder">2</div>
+        </button>
+        <button class="product-gallery__thumb" aria-label="Voir la vue 3">
+          <div class="product-gallery__thumb-placeholder">3</div>
+        </button>
+        <button class="product-gallery__thumb" aria-label="Voir la vue 4">
+          <div class="product-gallery__thumb-placeholder">4</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- --- Buy Box --- -->
+    <div class="buy-box">
+
+      <span class="buy-box__pack-badge">Meilleure offre <span aria-hidden="true">🐾</span></span>
+
+      <h1 class="buy-box__title">Pack Bien-être (Duo)</h1>
+      <p class="buy-box__pack-subtitle">Brosse Autonettoyante + Brosse à Vapeur</p>
+
+      <a href="#avis-produit" class="buy-box__rating">
+        <span class="buy-box__stars" aria-hidden="true">★★★★★</span>
+        <span class="buy-box__rating-text">4,9/5 (52 avis)</span>
+      </a>
+
+      <div class="buy-box__price-row">
+        <span class="buy-box__price-old">39,98 €</span>
+        <span class="buy-box__price">34,99 €</span>
+        <span class="buy-box__savings-badge">Économisez 5 €</span>
+      </div>
+
+      <p class="buy-box__description">
+        Le duo complet pour un toilettage sans effort : la Brosse Autonettoyante
+        retire les poils morts au quotidien, la Brosse à Vapeur apaise et fait
+        briller le pelage. Ensemble, elles couvrent tous les besoins.
+      </p>
+
+      <ul class="buy-box__bullets">
+        <li>Contient les 2 brosses ToudouPet</li>
+        <li>Un pelage propre et sain</li>
+        <li>Moins de poils partout dans la maison</li>
+        <li>Plus de moments câlins, sans stress</li>
+      </ul>
+
+      <div class="buy-box__purchase-row">
+        <div class="quantity-selector">
+          <button class="quantity-selector__btn" id="qtyMinus" aria-label="Diminuer la quantité">−</button>
+          <span class="quantity-selector__value" id="qtyValue">1</span>
+          <button class="quantity-selector__btn" id="qtyPlus" aria-label="Augmenter la quantité">+</button>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="addToCartBtn" data-id="pack-bien-etre" data-name="Pack Bien-être (Duo)" data-price="34.99">
+          Ajouter au panier <span aria-hidden="true">🐾</span>
+        </button>
+      </div>
+
+      <p class="buy-box__live-total" id="buyBoxTotal">Total pour 1 : 34,99 €</p>
+
+      <!-- Réassurance miniature, juste sous le CTA -->
+      <div class="buy-box__mini-trust">
+        <span>🚚 Livraison offerte dès 30€</span>
+        <span>🔄 Retours gratuits 30 jours</span>
+        <span>🔒 Paiement sécurisé</span>
+      </div>
+
+      <!-- Accordéons : infos secondaires -->
+      <div class="buy-box__accordion">
+
+        <div class="pdp-accordion__item">
+          <button class="pdp-accordion__question" aria-expanded="false">
+            Que contient le pack ?
+            <span class="pdp-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="pdp-accordion__answer">
+            <p>1x Brosse Autonettoyante (silicone souple, nettoyage en un clic) + 1x Brosse à Vapeur (réservoir 40ml, autonomie 40 minutes, charge USB-C). Les deux conviennent aux chats et aux chiens, tous poils.</p>
+          </div>
+        </div>
+
+        <div class="pdp-accordion__item">
+          <button class="pdp-accordion__question" aria-expanded="false">
+            Livraison &amp; retours
+            <span class="pdp-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="pdp-accordion__answer">
+            <p>Livraison en 2 à 5 jours ouvrés partout en France. 30 jours pour changer d'avis, satisfait ou remboursé, sans justification à fournir — sur l'ensemble du pack.</p>
+          </div>
+        </div>
+
+        <div class="pdp-accordion__item">
+          <button class="pdp-accordion__question" aria-expanded="false">
+            Guide d'entretien
+            <span class="pdp-accordion__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="pdp-accordion__answer">
+            <p>Brosse Autonettoyante : rincez à l'eau claire une fois par semaine. Brosse à Vapeur : remplissez uniquement avec de l'eau claire et laissez sécher à l'air libre après usage.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER PARTAGÉ — identique aux autres pages
+     ============================================================ -->
+<!-- ============================================================
+     SECTION 2 — COMMENT ÇA MARCHE + DESCRIPTION DÉTAILLÉE
+     Objectif : montrer la complémentarité des 2 produits du pack
+     ============================================================ -->
+<section class="product-description">
+  <div class="product-description__container">
+
+    <div class="section-eyebrow">
+      <span aria-hidden="true">🐾</span> Une routine complète <span aria-hidden="true">🐾</span>
+    </div>
+
+    <div class="steps">
+      <div class="steps__item">
+        <span class="steps__number">1</span>
+        <h3 class="steps__title">Brosse Autonettoyante</h3>
+        <p class="steps__text">Au quotidien, retirez les poils morts en douceur et nettoyez la brosse en un clic, sans effort.</p>
+      </div>
+      <div class="steps__item">
+        <span class="steps__number">2</span>
+        <h3 class="steps__title">Brosse à Vapeur</h3>
+        <p class="steps__text">Une à deux fois par semaine, offrez un soin plus profond : vapeur douce, désinfection et pelage brillant.</p>
+      </div>
+      <div class="steps__item">
+        <span class="steps__number">3</span>
+        <h3 class="steps__title">Le duo gagnant</h3>
+        <p class="steps__text">Ensemble, elles couvrent tous les besoins de toilettage, du geste rapide du quotidien au soin plus complet.</p>
+      </div>
+    </div>
+
+    <p class="product-description__text">
+      Pourquoi choisir entre les deux quand vous pouvez avoir le meilleur des deux mondes ?
+      Le Pack Bien-être associe la simplicité d'usage quotidien de la Brosse Autonettoyante
+      à l'efficacité apaisante de la Brosse à Vapeur, pour une routine de toilettage complète,
+      pensée pour le confort de votre animal comme pour le vôtre.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — AVIS PRODUIT
+     Objectif : preuve sociale ciblée sur le pack
+     ============================================================ -->
+<section class="product-reviews" id="avis-produit">
+  <div class="product-reviews__container">
+
+    <div class="section-eyebrow">
+      <span aria-hidden="true">🐾</span> Avis clients <span aria-hidden="true">🐾</span>
+    </div>
+
+    <div class="reviews__global-rating">
+      <span class="reviews__global-stars" aria-hidden="true">★★★★★</span>
+      <span class="reviews__global-text">4,9/5 — basé sur 52 avis</span>
+    </div>
+
+    <div class="reviews__grid">
+
+      <article class="review-card">
+        <div class="review-card__media">
+          <div class="review-card__img-placeholder">📸 Photo client</div>
+        </div>
+        <div class="review-card__body">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card__quote">
+            « Le pack est parfait, une brosse pour tous les jours et une pour le soin en plus. »
+          </p>
+          <p class="review-card__author">— Marine &amp; Filou <span aria-hidden="true">🐕</span></p>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__media">
+          <div class="review-card__img-placeholder">📸 Photo client</div>
+        </div>
+        <div class="review-card__body">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card__quote">
+            « Meilleur rapport qualité-prix, j'aurais dû prendre le pack dès le début. »
+          </p>
+          <p class="review-card__author">— David &amp; Choupette <span aria-hidden="true">🐈</span></p>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__media">
+          <div class="review-card__img-placeholder">📸 Photo client</div>
+        </div>
+        <div class="review-card__body">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card__quote">
+            « Mes deux chiens adorent, et moi je ne trouve plus de poils partout. »
+          </p>
+          <p class="review-card__author">— Elodie &amp; ses 2 chiens <span aria-hidden="true">🐕</span></p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 — FAQ PRODUIT
+     Objectif : lever les objections propres à l'achat du pack
+     ============================================================ -->
+<section class="faq product-faq">
+  <div class="faq__container">
+
+    <div class="section-eyebrow">
+      <span aria-hidden="true">🐾</span> Questions sur ce pack <span aria-hidden="true">🐾</span>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Le pack revient-il vraiment moins cher que les 2 produits séparés ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Oui. Séparément, les 2 brosses coûtent 39,98€. Le pack est à 34,99€, soit 5€ d'économie immédiate, sans code promo à chercher.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Puis-je retourner une seule des deux brosses si besoin ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>La garantie 30 jours s'applique à l'ensemble du pack. Pour un retour partiel, contactez notre support, nous trouverons une solution adaptée.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Les deux brosses conviennent-elles à un seul animal ou à plusieurs ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Les deux ! Elles s'adaptent à tous types de pelages et peuvent être utilisées sur plusieurs animaux du foyer, chats comme chiens.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Est-ce un bon premier achat si je débute dans le toilettage ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Oui, c'est même l'option recommandée : vous avez tout le nécessaire pour une routine complète dès le premier jour, sans avoir à choisir.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer__container">
+
+    <div class="site-footer__grid">
+
+      <div class="site-footer__col site-footer__col--brand">
+        <a href="index.html" class="site-footer__logo">
+          <img src="logo.png" alt="ToudouPet" class="site-footer__logo-img">
+          ToudouPet
+        </a>
+        <p class="site-footer__tagline">
+          Des accessoires innovants pour le bien-être et le bonheur de vos compagnons à quatre pattes.
+        </p>
+        <a href="mailto:toudoupercontact@gmail.com" class="site-footer__email">✉️ toudoupercontact@gmail.com</a>
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/toudoupet" target="_blank" rel="noopener" class="site-footer__social-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@toudoupet" target="_blank" rel="noopener" class="site-footer__social-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M15 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/>
+              <path d="M15 3c0 2.5 2 4.5 4.5 4.5"/>
+            </svg>
+          </a>
+          <a href="#" class="site-footer__social-icon" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9a1 1 0 0 1 1-1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Nos produits</h4>
+        <a href="product.html" class="site-footer__link">Brosse Autonettoyante</a>
+        <a href="product2.html" class="site-footer__link">Brosse à Vapeur</a>
+        <a href="pack.html" class="site-footer__link">Pack Duo</a>
+        <a href="catalogue.html" class="site-footer__link">Tous nos produits</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Informations</h4>
+        <a href="guide.html" class="site-footer__link">Guide d'utilisation</a>
+        <a href="about.html" class="site-footer__link">À propos</a>
+        <a href="contact.html" class="site-footer__link">Contact</a>
+        <a href="livraison.html" class="site-footer__link">Livraison</a>
+        <a href="retours-remboursements.html" class="site-footer__link">Retours &amp; remboursements</a>
+        <a href="faq.html" class="site-footer__link">FAQ</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Paiement sécurisé</h4>
+        <div class="site-footer__payments">
+          <span class="site-footer__payment-badge">Visa</span>
+          <span class="site-footer__payment-badge">Mastercard</span>
+          <span class="site-footer__payment-badge">PayPal</span>
+          <span class="site-footer__payment-badge">Apple Pay</span>
+        </div>
+        <p class="site-footer__mini-trust">🚚 Livraison rapide</p>
+        <p class="site-footer__mini-trust">🇫🇷 Entreprise française</p>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">© 2026 ToudouPet. Tous droits réservés.</p>
+      <div class="site-footer__legal-links">
+        <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+        <a href="politique-confidentialite.html" class="site-footer__legal-link">Politique de confidentialité</a>
+        <a href="cgv.html" class="site-footer__legal-link">CGV</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  // Menu burger mobile
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    burgerBtn.classList.toggle('is-active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Sélecteur de quantité + total live + ajout au panier
+  const qtyValue = document.getElementById('qtyValue');
+  const qtyMinus = document.getElementById('qtyMinus');
+  const qtyPlus = document.getElementById('qtyPlus');
+  const buyBoxTotal = document.getElementById('buyBoxTotal');
+  const addToCartBtn = document.getElementById('addToCartBtn');
+  let quantity = 1;
+
+  function updateLiveTotal() {
+    const unitPrice = parseFloat(addToCartBtn.dataset.price);
+    const total = unitPrice * quantity;
+    buyBoxTotal.textContent = `Total pour ${quantity} : ${ToudouCart.formatPrice(total)}`;
+  }
+
+  qtyMinus.addEventListener('click', () => {
+    if (quantity > 1) {
+      quantity -= 1;
+      qtyValue.textContent = quantity;
+      updateLiveTotal();
+    }
+  });
+
+  qtyPlus.addEventListener('click', () => {
+    quantity += 1;
+    qtyValue.textContent = quantity;
+    updateLiveTotal();
+  });
+
+  addToCartBtn.addEventListener('click', () => {
+    ToudouCart.addToCart({
+      id: addToCartBtn.dataset.id,
+      name: addToCartBtn.dataset.name,
+      price: parseFloat(addToCartBtn.dataset.price),
+      qty: quantity,
+    });
+  });
+
+  // Galerie — changement d'image au clic sur une miniature
+  const thumbs = document.querySelectorAll('.product-gallery__thumb');
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      thumbs.forEach((t) => t.classList.remove('is-active'));
+      thumb.classList.add('is-active');
+      // En production : remplacer galleryMain.src par l'image correspondante
+    });
+  });
+
+  // Accordéon fiche produit — une seule réponse ouverte à la fois
+  const pdpQuestions = document.querySelectorAll('.pdp-accordion__question');
+  pdpQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+      const item = question.closest('.pdp-accordion__item');
+      const isOpen = item.classList.contains('is-open');
+
+      document.querySelectorAll('.pdp-accordion__item.is-open').forEach((openItem) => {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.pdp-accordion__question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Accordéon FAQ produit (section dédiée, en bas de page)
+  const faqQuestions = document.querySelectorAll('.faq__question');
+  faqQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+      const item = question.closest('.faq__item');
+      const isOpen = item.classList.contains('is-open');
+
+      document.querySelectorAll('.faq__item.is-open').forEach((openItem) => {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo.png">
+<title>Mentions légales — ToudouPet</title>
+<meta name="description" content="Informations légales relatives à l'éditeur du site ToudouPet et aux conditions d'utilisation.">
+<link rel="canonical" href="https://www.toudoupet.fr/mentions-legales.html">
+
+<!-- Open Graph (partage Facebook, Instagram, LinkedIn...) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mentions légales — ToudouPet">
+<meta property="og:description" content="Informations légales relatives à l'éditeur du site ToudouPet et aux conditions d'utilisation.">
+<meta property="og:image" content="https://www.toudoupet.fr/logo.png">
+<meta property="og:url" content="https://www.toudoupet.fr/mentions-legales.html">
+<meta property="og:site_name" content="ToudouPet">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mentions légales — ToudouPet">
+<meta name="twitter:description" content="Informations légales relatives à l'éditeur du site ToudouPet et aux conditions d'utilisation.">
+<meta name="twitter:image" content="https://www.toudoupet.fr/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+
+<div class="announcement-bar">
+  <div class="announcement-bar__track">
+    <span class="announcement-bar__item">🚚 Livraison offerte dès 30€</span>
+    <span class="announcement-bar__item">⭐ +100 clients satisfaits</span>
+    <span class="announcement-bar__item">🔒 Paiement 100% sécurisé</span>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__container">
+
+    <button class="site-header__burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-header__logo">
+      <img src="logo.png" alt="ToudouPet" class="site-header__logo-img">
+      ToudouPet
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navigation principale">
+      <a href="index.html" class="site-header__link">Accueil</a>
+      <a href="catalogue.html" class="site-header__link">Catalogue</a>
+      <a href="guide.html" class="site-header__link">Guide d'utilisation</a>
+      <a href="about.html" class="site-header__link">À propos</a>
+      <a href="contact.html" class="site-header__link">Contact</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="site-header__icon-btn" aria-label="Mon compte" title="Mon compte (bientôt disponible)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+
+      <button class="site-header__icon-btn site-header__cart" id="cartIconBtn" aria-label="Panier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <path d="M3 6h18"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="site-header__cart-count">0</span>
+      </button>
+    </div>
+
+  </div>
+
+  <nav class="site-header__mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <a href="index.html" class="site-header__mobile-link">Accueil</a>
+    <a href="catalogue.html" class="site-header__mobile-link">Catalogue</a>
+    <a href="guide.html" class="site-header__mobile-link">Guide d'utilisation</a>
+    <a href="about.html" class="site-header__mobile-link">À propos</a>
+    <a href="contact.html" class="site-header__mobile-link">Contact</a>
+  </nav>
+</header>
+<!-- ============================================================
+     PANIER COULISSANT (CART DRAWER) — partagé par toutes les pages
+     ============================================================ -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__overlay" id="cartOverlay"></div>
+  <div class="cart-drawer__panel">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Votre panier</h2>
+      <button class="cart-drawer__close" id="cartCloseBtn" aria-label="Fermer le panier">×</button>
+    </div>
+
+    <div class="cart-drawer__items" id="cartItems"></div>
+    <p class="cart-drawer__empty" id="cartEmpty" hidden>Votre panier est vide pour l'instant.</p>
+
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__subtotal">
+        <span>Sous-total</span>
+        <span id="cartSubtotal">0,00 €</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="cartCheckoutBtn">
+        Commander <span aria-hidden="true">🐾</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<nav class="breadcrumb" aria-label="Fil d'ariane">
+  <a href="index.html" class="breadcrumb__link">Accueil</a>
+  <span class="breadcrumb__sep" aria-hidden="true">/</span>
+  <span class="breadcrumb__current">Mentions légales</span>
+</nav>
+
+<section class="legal-header">
+  <div class="legal-header__container">
+    <h1 class="legal-header__title">Mentions légales</h1>
+    <p class="legal-header__updated">Dernière mise à jour : juillet 2026</p>
+  </div>
+</section>
+
+<div class="legal-disclaimer">
+  <p class="legal-disclaimer__box">
+    ⚠️ Modèle de base à personnaliser avec vos informations réelles (indiquées en surbrillance),
+    et à faire relire par un professionnel du droit avant publication.
+  </p>
+</div>
+
+<section class="legal-content">
+  <div class="legal-content__container">
+
+    <div class="legal-section">
+      <h2 class="legal-section__title">1. Éditeur du site</h2>
+      <p class="legal-section__text">
+        Le présent site est édité par <span class="legal-placeholder">[Nom de la société, ex. ToudouPet SAS]</span>,
+        <span class="legal-placeholder">[forme juridique, ex. SASU / EI]</span> au capital de <span class="legal-placeholder">[montant]</span> €,
+        immatriculée au RCS de <span class="legal-placeholder">[ville]</span> sous le numéro <span class="legal-placeholder">[numéro SIRET]</span>,
+        dont le siège social est situé <span class="legal-placeholder">[adresse complète]</span>.
+      </p>
+      <p class="legal-section__text">
+        Numéro de TVA intracommunautaire : <span class="legal-placeholder">[numéro de TVA]</span><br>
+        Directeur de la publication : <span class="legal-placeholder">[Nom du responsable]</span><br>
+        Contact : <span class="legal-placeholder">toudoupercontact@gmail.com</span>
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section__title">2. Hébergement</h2>
+      <p class="legal-section__text">
+        Le site est hébergé par <span class="legal-placeholder">[Nom de l'hébergeur, ex. Shopify Inc.]</span>,
+        dont le siège social est situé <span class="legal-placeholder">[adresse de l'hébergeur]</span>.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section__title">3. Propriété intellectuelle</h2>
+      <p class="legal-section__text">
+        L'ensemble des éléments du site ToudouPet (textes, images, logos, éléments graphiques, structure)
+        est protégé par le droit d'auteur et le droit des marques. Toute reproduction, représentation,
+        modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est interdite.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section__title">4. Données personnelles</h2>
+      <p class="legal-section__text">
+        Le traitement des données personnelles collectées sur ce site est décrit en détail dans notre
+        <a href="politique-confidentialite.html" class="contact-info__link">Politique de confidentialité</a>,
+        conforme au Règlement Général sur la Protection des Données (RGPD).
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section__title">5. Liens hypertextes</h2>
+      <p class="legal-section__text">
+        Le site peut contenir des liens vers d'autres sites. ToudouPet n'exerce aucun contrôle sur ces sites
+        tiers et décline toute responsabilité quant à leur contenu.
+      </p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section__title">6. Droit applicable</h2>
+      <p class="legal-section__text">
+        Les présentes mentions légales sont soumises au droit français. En cas de litige, et à défaut de
+        résolution amiable, les tribunaux français seront seuls compétents.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="site-footer__container">
+
+    <div class="site-footer__grid">
+
+      <div class="site-footer__col site-footer__col--brand">
+        <a href="index.html" class="site-footer__logo">
+          <img src="logo.png" alt="ToudouPet" class="site-footer__logo-img">
+          ToudouPet
+        </a>
+        <p class="site-footer__tagline">
+          Des accessoires innovants pour le bien-être et le bonheur de vos compagnons à quatre pattes.
+        </p>
+        <a href="mailto:toudoupercontact@gmail.com" class="site-footer__email">✉️ toudoupercontact@gmail.com</a>
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/toudoupet" target="_blank" rel="noopener" class="site-footer__social-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@toudoupet" target="_blank" rel="noopener" class="site-footer__social-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M15 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/>
+              <path d="M15 3c0 2.5 2 4.5 4.5 4.5"/>
+            </svg>
+          </a>
+          <a href="#" class="site-footer__social-icon" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9a1 1 0 0 1 1-1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Nos produits</h4>
+        <a href="product.html" class="site-footer__link">Brosse Autonettoyante</a>
+        <a href="product2.html" class="site-footer__link">Brosse à Vapeur</a>
+        <a href="pack.html" class="site-footer__link">Pack Duo</a>
+        <a href="catalogue.html" class="site-footer__link">Tous nos produits</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Informations</h4>
+        <a href="guide.html" class="site-footer__link">Guide d'utilisation</a>
+        <a href="about.html" class="site-footer__link">À propos</a>
+        <a href="contact.html" class="site-footer__link">Contact</a>
+        <a href="livraison.html" class="site-footer__link">Livraison</a>
+        <a href="retours-remboursements.html" class="site-footer__link">Retours &amp; remboursements</a>
+        <a href="faq.html" class="site-footer__link">FAQ</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Paiement sécurisé</h4>
+        <div class="site-footer__payments">
+          <span class="site-footer__payment-badge">Visa</span>
+          <span class="site-footer__payment-badge">Mastercard</span>
+          <span class="site-footer__payment-badge">PayPal</span>
+          <span class="site-footer__payment-badge">Apple Pay</span>
+        </div>
+        <p class="site-footer__mini-trust">🚚 Livraison rapide</p>
+        <p class="site-footer__mini-trust">🇫🇷 Entreprise française</p>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">© 2026 ToudouPet. Tous droits réservés.</p>
+      <div class="site-footer__legal-links">
+        <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+        <a href="politique-confidentialite.html" class="site-footer__legal-link">Politique de confidentialité</a>
+        <a href="cgv.html" class="site-footer__legal-link">CGV</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    burgerBtn.classList.toggle('is-active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

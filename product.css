@@ -1,0 +1,467 @@
+/* ================================================================
+   PRODUCT.CSS — Styles propres à la page produit
+   Réutilise les tokens (:root), boutons (.btn) et header/footer
+   déjà définis dans style.css — ne pas dupliquer ces règles ici.
+   Le fil d'ariane (.breadcrumb) est désormais dans style.css,
+   partagé par toutes les pages du site.
+   ================================================================ */
+
+/* ================================================================
+   SECTION — GALERIE + BUY BOX
+   ================================================================ */
+.product-hero {
+  background: var(--color-bg);
+  padding: 24px 32px 80px;
+}
+
+.product-hero__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* --- Galerie --- */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+}
+
+.product-gallery__main {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--color-bg-soft);
+}
+
+.product-gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-gallery__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 15px;
+  background: linear-gradient(145deg, var(--color-accent-light), var(--color-bg-soft));
+}
+
+.product-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.product-gallery__thumb {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color var(--transition-fast);
+}
+
+.product-gallery__thumb.is-active {
+  border-color: var(--color-accent);
+}
+
+.product-gallery__thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* --- Buy Box --- */
+.buy-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.buy-box__title {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.buy-box__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: 18px;
+}
+
+.buy-box__stars {
+  color: var(--color-accent);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.buy-box__rating-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.buy-box__price {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+}
+
+.buy-box__description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.buy-box__bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.buy-box__bullets li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 14.5px;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.buy-box__bullets li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* --- Ligne d'achat : quantité + CTA --- */
+.buy-box__purchase-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border);
+  border-radius: 100px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.quantity-selector__btn {
+  width: 44px;
+  height: 52px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--color-dark);
+  transition: background var(--transition-fast);
+}
+
+.quantity-selector__btn:hover {
+  background: var(--color-bg-soft);
+}
+
+.quantity-selector__value {
+  width: 32px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.btn--full {
+  flex: 1;
+  justify-content: center;
+  padding: 15px 24px;
+  font-size: 16px;
+}
+
+.buy-box__live-total {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  margin-top: -8px;
+}
+
+/* --- Réassurance miniature --- */
+.buy-box__mini-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  margin-bottom: 12px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.buy-box__mini-trust span {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* ================================================================
+   ACCORDÉON FICHE PRODUIT
+   (classes préfixées pdp- pour ne pas entrer en conflit
+   avec l'accordéon FAQ de la home, dont le style diffère)
+   ================================================================ */
+.buy-box__accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-accordion__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pdp-accordion__question {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 16px 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pdp-accordion__icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.pdp-accordion__item.is-open .pdp-accordion__icon {
+  transform: rotate(45deg);
+}
+
+.pdp-accordion__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows var(--transition-medium);
+}
+
+.pdp-accordion__item.is-open .pdp-accordion__answer {
+  grid-template-rows: 1fr;
+}
+
+.pdp-accordion__answer p {
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.pdp-inline-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent-light);
+}
+
+.pdp-inline-link:hover {
+  border-color: var(--color-accent);
+}
+
+.pdp-accordion__item.is-open .pdp-accordion__answer p {
+  padding-bottom: 16px;
+}
+
+/* ================================================================
+   RESPONSIVE — PAGE PRODUIT
+   ================================================================ */
+@media (max-width: 900px) {
+  .product-hero {
+    padding: 20px 20px 100px;
+  }
+
+  .product-hero__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .product-gallery {
+    position: static;
+  }
+
+  /* CTA collant en bas d'écran sur mobile : supprime la friction
+     de devoir remonter en haut de page pour acheter */
+  .buy-box__purchase-row {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    padding: 14px 20px;
+    margin: 0;
+    box-shadow: 0 -4px 20px rgba(30, 27, 24, 0.08);
+    z-index: 90;
+  }
+
+  /* Compense l'espace laissé par la barre sticky en bas */
+  .buy-box {
+    padding-bottom: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-gallery__thumbs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .buy-box__mini-trust {
+    gap: 10px;
+  }
+}
+
+/* ================================================================
+   SECTION 2 — COMMENT ÇA MARCHE + DESCRIPTION DÉTAILLÉE
+   ================================================================ */
+.product-description {
+  background: var(--color-bg-soft);
+  padding: 88px 32px;
+}
+
+.product-description__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.steps__item {
+  text-align: center;
+  padding: 0 12px;
+}
+
+.steps__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.steps__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.steps__text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.product-description__text {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ================================================================
+   SECTION 3 — AVIS PRODUIT
+   (réutilise .reviews__global-rating, .reviews__grid, .review-card
+   déjà définis dans style.css pour la home)
+   ================================================================ */
+.product-reviews {
+  background: var(--color-bg);
+  padding: 88px 32px;
+}
+
+.product-reviews__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ================================================================
+   SECTION 4 — FAQ PRODUIT
+   (réutilise .faq, .faq__list, .faq__item... déjà définis pour
+   la FAQ de la home — juste un padding réduit ici)
+   ================================================================ */
+.product-faq {
+  padding-top: 0;
+}
+
+/* ================================================================
+   RESPONSIVE — SECTIONS COMPLÉMENTAIRES
+   ================================================================ */
+@media (max-width: 900px) {
+  .product-description,
+  .product-reviews {
+    padding: 56px 20px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

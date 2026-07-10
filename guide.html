@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo.png">
+<title>Guide d'utilisation — ToudouPet</title>
+<meta name="description" content="Comment utiliser et entretenir votre brosse autonettoyante ou votre brosse vapeur ToudouPet : conseils de toilettage, fréquence de brossage et bonnes pratiques.">
+<link rel="canonical" href="https://www.toudoupet.fr/guide.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guide d'utilisation — ToudouPet">
+<meta property="og:description" content="Comment utiliser et entretenir votre brosse autonettoyante ou votre brosse vapeur ToudouPet : conseils de toilettage, fréquence de brossage et bonnes pratiques.">
+<meta property="og:image" content="https://www.toudoupet.fr/logo.png">
+<meta property="og:url" content="https://www.toudoupet.fr/guide.html">
+<meta property="og:site_name" content="ToudouPet">
+<meta property="og:locale" content="fr_FR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guide d'utilisation — ToudouPet">
+<meta name="twitter:description" content="Comment utiliser et entretenir votre brosse autonettoyante ou votre brosse vapeur ToudouPet : conseils de toilettage, fréquence de brossage et bonnes pratiques.">
+<meta name="twitter:image" content="https://www.toudoupet.fr/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+
+<div class="announcement-bar">
+  <div class="announcement-bar__track">
+    <span class="announcement-bar__item">🚚 Livraison offerte dès 30€</span>
+    <span class="announcement-bar__item">⭐ +100 clients satisfaits</span>
+    <span class="announcement-bar__item">🔒 Paiement 100% sécurisé</span>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__container">
+
+    <button class="site-header__burger" id="burgerBtn" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="index.html" class="site-header__logo">
+      <img src="logo.png" alt="ToudouPet" class="site-header__logo-img">
+      ToudouPet
+    </a>
+
+    <nav class="site-header__nav" aria-label="Navigation principale">
+      <a href="index.html" class="site-header__link">Accueil</a>
+      <a href="catalogue.html" class="site-header__link">Catalogue</a>
+      <a href="guide.html" class="site-header__link">Guide d'utilisation</a>
+      <a href="about.html" class="site-header__link">À propos</a>
+      <a href="contact.html" class="site-header__link">Contact</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="site-header__icon-btn" aria-label="Mon compte" title="Mon compte (bientôt disponible)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+
+      <button class="site-header__icon-btn site-header__cart" id="cartIconBtn" aria-label="Panier">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <path d="M3 6h18"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="site-header__cart-count">0</span>
+      </button>
+    </div>
+
+  </div>
+
+  <nav class="site-header__mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+    <a href="index.html" class="site-header__mobile-link">Accueil</a>
+    <a href="catalogue.html" class="site-header__mobile-link">Catalogue</a>
+    <a href="guide.html" class="site-header__mobile-link">Guide d'utilisation</a>
+    <a href="about.html" class="site-header__mobile-link">À propos</a>
+    <a href="contact.html" class="site-header__mobile-link">Contact</a>
+  </nav>
+</header>
+
+<!-- ============================================================
+     PANIER COULISSANT (CART DRAWER) — partagé par toutes les pages
+     ============================================================ -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__overlay" id="cartOverlay"></div>
+  <div class="cart-drawer__panel">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Votre panier</h2>
+      <button class="cart-drawer__close" id="cartCloseBtn" aria-label="Fermer le panier">×</button>
+    </div>
+
+    <div class="cart-drawer__items" id="cartItems"></div>
+    <p class="cart-drawer__empty" id="cartEmpty" hidden>Votre panier est vide pour l'instant.</p>
+
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__subtotal">
+        <span>Sous-total</span>
+        <span id="cartSubtotal">0,00 €</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="cartCheckoutBtn">
+        Commander <span aria-hidden="true">🐾</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<nav class="breadcrumb" aria-label="Fil d'ariane">
+  <a href="index.html" class="breadcrumb__link">Accueil</a>
+  <span class="breadcrumb__sep" aria-hidden="true">/</span>
+  <span class="breadcrumb__current">Guide d'utilisation</span>
+</nav>
+
+<!-- ============================================================
+     SECTION 1 — HERO
+     Objectif : poser le ton "marque experte qui accompagne",
+     pas juste une FAQ technique
+     ============================================================ -->
+<section class="guide-hero">
+  <div class="guide-hero__container">
+    <div class="section-eyebrow" style="text-align:left; margin-bottom:16px;">
+      <span aria-hidden="true">🐾</span> Guide d'utilisation
+    </div>
+    <h1 class="guide-hero__title">Bien utiliser vos produits ToudouPet</h1>
+    <p class="guide-hero__subtitle">
+      Retrouvez toutes les informations pour utiliser, entretenir et profiter
+      pleinement de vos produits ToudouPet — pour un pelage sain et des moments
+      de complicité en toute sérénité.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     NAVIGATION RAPIDE — trouver une info en moins de 5 secondes
+     ============================================================ -->
+<nav class="guide-quicknav" aria-label="Navigation rapide du guide">
+  <a href="#brosse-autonettoyante" class="guide-quicknav__pill">🧹 Brosse Autonettoyante</a>
+  <a href="#brosse-vapeur" class="guide-quicknav__pill">💧 Brosse à Vapeur</a>
+  <a href="#conseils-generaux" class="guide-quicknav__pill">🤍 Conseils généraux</a>
+  <a href="#faq-guide" class="guide-quicknav__pill">❓ Questions fréquentes</a>
+  <a href="#videos" class="guide-quicknav__pill">🎥 Vidéos</a>
+</nav>
+
+<!-- ============================================================
+     SECTION 2 — BROSSE AUTONETTOYANTE
+     ============================================================ -->
+<section class="guide-section" id="brosse-autonettoyante">
+  <div class="guide-section__container">
+
+    <div class="guide-section__header">
+      <span class="guide-section__icon" aria-hidden="true">🧹</span>
+      <div>
+        <h2 class="guide-section__title">Brosse Autonettoyante</h2>
+        <p class="guide-section__intro">Le geste quotidien simple pour un pelage propre, sans effort.</p>
+      </div>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Comment utiliser la brosse ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Passez la brosse dans le sens du poil, avec des gestes doux et réguliers, sans appuyer trop fort. Les picots en silicone souple s'adaptent naturellement à la forme du corps de votre animal.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          À quelle fréquence brosser son animal ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>2 à 3 fois par semaine suffisent pour un entretien courant. En période de mue (printemps/automne), un brossage quotidien aide à limiter significativement la perte de poils dans la maison.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Convient-elle aux poils courts, mi-longs et longs ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Oui, les picots souples s'adaptent à tous les types de pelage. Pour les poils très longs ou emmêlés, un léger démêlage préalable avec un peigne facilite le passage de la brosse.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Comment retirer les poils grâce au système autonettoyant ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Un simple clic sur le bouton situé sur le manche rétracte les picots à l'intérieur de la brosse, libérant instantanément tous les poils accumulés. Il ne reste plus qu'à les jeter à la poubelle.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Comment nettoyer la brosse en profondeur ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Une fois par semaine, rincez la brosse à l'eau claire (picots rétractés) pour éliminer les résidus les plus fins. Laissez sécher à l'air libre avant la prochaine utilisation.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Conseils d'entretien pour la faire durer
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Rangez-la à l'abri de l'humidité, évitez de la laisser en plein soleil, et rétractez toujours les picots après usage pour préserver leur souplesse dans le temps.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Les erreurs à éviter
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Évitez de brosser à contre-poil de manière insistante, de forcer sur les nœuds sans les démêler d'abord, et de brosser un animal encore mouillé — le pelage sec réagit mieux au brossage.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3 — BROSSE À VAPEUR
+     ============================================================ -->
+<section class="guide-section guide-section--alt" id="brosse-vapeur">
+  <div class="guide-section__container">
+
+    <div class="guide-section__header">
+      <span class="guide-section__icon" aria-hidden="true">💧</span>
+      <div>
+        <h2 class="guide-section__title">Brosse à Vapeur</h2>
+        <p class="guide-section__intro">Un soin plus profond, apaisant, pour un pelage brillant et sain.</p>
+      </div>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Première utilisation : comment démarrer ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Rechargez entièrement la brosse avant la première utilisation, remplissez le réservoir d'eau claire, puis testez la diffusion de vapeur quelques secondes à l'écart de votre animal pour vérifier le bon fonctionnement.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Comment remplir le réservoir ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Ouvrez le clapet situé à l'arrière de la brosse et versez l'eau doucement jusqu'au repère de remplissage maximal, sans dépasser. Refermez bien avant utilisation.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Quelle eau utiliser ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Uniquement de l'eau claire du robinet. N'ajoutez jamais de parfum, d'huile essentielle ou d'additif : cela pourrait endommager le système de chauffe et irriter la peau de votre animal.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Quelle est la capacité du réservoir et l'autonomie ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Le réservoir a une capacité de 40ml, pour une autonomie d'environ 40 minutes d'utilisation continue — largement de quoi couvrir plusieurs séances de brossage.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Combien de temps pour la charger ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Comptez environ 2h pour une charge complète via le câble USB-C fourni. Une LED sur le manche indique l'état de charge.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Comment l'entretenir et la nettoyer ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Videz le réservoir après chaque utilisation et laissez la brosse sécher à l'air libre, clapet ouvert, pour éviter toute stagnation d'eau à l'intérieur.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Comment la stocker entre deux utilisations ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Rangez-la à plat, réservoir vide et sec, à l'abri de l'humidité. Évitez de la stocker à proximité d'une source de chaleur directe.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Conseils pour un usage optimal
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Passez la brosse à quelques centimètres du pelage, en mouvements lents et réguliers. La vapeur agit en douceur, inutile d'appuyer ou de repasser plusieurs fois au même endroit.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4 — CONSEILS GÉNÉRAUX
+     Objectif : articles courts, valeur ajoutée "marque experte"
+     ============================================================ -->
+<section class="guide-section" id="conseils-generaux">
+  <div class="guide-section__container">
+
+    <div class="section-eyebrow">
+      <span aria-hidden="true">🐾</span> Conseils généraux <span aria-hidden="true">🐾</span>
+    </div>
+
+    <div class="tip-grid">
+
+      <article class="tip-card">
+        <span class="tip-card__icon" aria-hidden="true">✨</span>
+        <h3 class="tip-card__title">Pourquoi brosser régulièrement son animal ?</h3>
+        <p class="tip-card__text">
+          Le brossage régulier limite les poils morts dans la maison, prévient les nœuds
+          et stimule la circulation sanguine. C'est aussi un vrai moment de complicité.
+        </p>
+      </article>
+
+      <article class="tip-card">
+        <span class="tip-card__icon" aria-hidden="true">🐾</span>
+        <h3 class="tip-card__title">Comment habituer un animal au brossage ?</h3>
+        <p class="tip-card__text">
+          Introduisez la brosse progressivement, en séances courtes et positives.
+          Récompensez votre animal après chaque session pour créer une association agréable.
+        </p>
+      </article>
+
+      <article class="tip-card">
+        <span class="tip-card__icon" aria-hidden="true">📅</span>
+        <h3 class="tip-card__title">Quelle fréquence selon le type de poil ?</h3>
+        <p class="tip-card__text">
+          Poil court : 1 à 2 fois/semaine. Poil mi-long : 2 à 3 fois/semaine.
+          Poil long : idéalement tous les jours pour éviter les nœuds.
+        </p>
+      </article>
+
+      <article class="tip-card">
+        <span class="tip-card__icon" aria-hidden="true">⚠️</span>
+        <h3 class="tip-card__title">Les erreurs les plus fréquentes</h3>
+        <p class="tip-card__text">
+          Brosser trop fort, ignorer les nœuds au lieu de les démêler doucement,
+          ou brosser un animal stressé sans pause — mieux vaut plusieurs courtes séances.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5 — FAQ ÉTENDUE (spécifique à l'usage)
+     Objectif : différente de la FAQ home/faq.html, centrée sur
+     les doutes liés à l'usage réel, pas à la livraison/paiement
+     ============================================================ -->
+<section class="faq" id="faq-guide" style="padding-top: 24px;">
+  <div class="faq__container">
+
+    <div class="section-eyebrow">
+      <span aria-hidden="true">🐾</span> Questions sur l'utilisation <span aria-hidden="true">🐾</span>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Puis-je utiliser les brosses sur un chaton ou un chiot ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Oui, avec des gestes encore plus doux et des séances courtes pour l'habituer sereinement. Pour la brosse à vapeur, privilégiez de courtes sessions de découverte au départ.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Mon animal a peur de la brosse, que faire ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Laissez-le d'abord sentir et observer la brosse à l'arrêt. Introduisez-la progressivement lors de moments calmes, jamais en le forçant, avec une récompense à chaque étape positive.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          La brosse peut-elle abîmer le poil ou irriter la peau ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Non, les picots en silicone souple et la vapeur à basse température sont conçus pour être doux, même sur peau sensible, à condition de suivre les conseils d'usage de ce guide.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Puis-je utiliser les deux produits le même jour ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>Oui, c'est même la routine que nous recommandons : la Brosse Autonettoyante au quotidien, et la Brosse à Vapeur 1 à 2 fois par semaine pour un soin plus profond.</p>
+        </div>
+      </div>
+
+      <div class="faq__item">
+        <button class="faq__question" aria-expanded="false">
+          Que faire si mon animal perd beaucoup de poils malgré le brossage ?
+          <span class="faq__icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq__answer">
+          <p>C'est normal en période de mue saisonnière. Si la perte semble excessive en dehors de cette période, nous recommandons d'en parler à votre vétérinaire par précaution.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6 — VIDÉOS (emplacements réservés)
+     Objectif : préparer l'intégration future de contenu vidéo
+     TikTok/Reels/tutoriels, sans attendre d'avoir le contenu
+     ============================================================ -->
+<section class="guide-section guide-section--alt" id="videos">
+  <div class="guide-section__container">
+
+    <div class="section-eyebrow">
+      <span aria-hidden="true">🐾</span> Nos vidéos <span aria-hidden="true">🐾</span>
+    </div>
+    <p class="guide-section__intro" style="text-align:center; margin: -24px auto 40px; max-width: 480px;">
+      Tutoriels et démonstrations en vidéo — bientôt disponibles.
+    </p>
+
+    <div class="video-grid">
+      <div class="video-placeholder">
+        <span class="video-placeholder__play" aria-hidden="true">▶</span>
+        <span class="video-placeholder__label">Tutoriel TikTok<br>bientôt disponible</span>
+      </div>
+      <div class="video-placeholder">
+        <span class="video-placeholder__play" aria-hidden="true">▶</span>
+        <span class="video-placeholder__label">Reel Instagram<br>bientôt disponible</span>
+      </div>
+      <div class="video-placeholder">
+        <span class="video-placeholder__play" aria-hidden="true">▶</span>
+        <span class="video-placeholder__label">Tutoriel complet<br>bientôt disponible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7 — BANNIÈRE CTA FINALE
+     ============================================================ -->
+<section class="about-cta">
+  <div class="about-cta__container">
+    <h2 class="about-cta__title">Prêt à prendre soin de votre compagnon ?</h2>
+    <p class="about-cta__text">Découvrez nos brosses, pensées pour lui autant que pour vous.</p>
+    <a href="catalogue.html" class="btn btn--light">
+      Découvrir nos produits <span aria-hidden="true">🐾</span>
+    </a>
+  </div>
+</section>
+
+<!-- Schema.org — FAQPage (questions de la section "Questions sur l'utilisation") -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Puis-je utiliser les brosses sur un chaton ou un chiot ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, avec des gestes encore plus doux et des séances courtes pour l'habituer sereinement. Pour la brosse à vapeur, privilégiez de courtes sessions de découverte au départ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon animal a peur de la brosse, que faire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Laissez-le d'abord sentir et observer la brosse à l'arrêt. Introduisez-la progressivement lors de moments calmes, jamais en le forçant, avec une récompense à chaque étape positive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La brosse peut-elle abîmer le poil ou irriter la peau ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non, les picots en silicone souple et la vapeur à basse température sont conçus pour être doux, même sur peau sensible, à condition de suivre les conseils d'usage de ce guide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je utiliser les deux produits le même jour ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, c'est même la routine recommandée : la Brosse Autonettoyante au quotidien, et la Brosse à Vapeur 1 à 2 fois par semaine pour un soin plus profond."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que faire si mon animal perd beaucoup de poils malgré le brossage ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est normal en période de mue saisonnière. Si la perte semble excessive en dehors de cette période, il est recommandé d'en parler à un vétérinaire par précaution."
+      }
+    }
+  ]
+}
+</script>
+
+<footer class="site-footer">
+  <div class="site-footer__container">
+
+    <div class="site-footer__grid">
+
+      <div class="site-footer__col site-footer__col--brand">
+        <a href="index.html" class="site-footer__logo">
+          <img src="logo.png" alt="ToudouPet" class="site-footer__logo-img">
+          ToudouPet
+        </a>
+        <p class="site-footer__tagline">
+          Des accessoires innovants pour le bien-être et le bonheur de vos compagnons à quatre pattes.
+        </p>
+        <a href="mailto:toudoupercontact@gmail.com" class="site-footer__email">✉️ toudoupercontact@gmail.com</a>
+        <div class="site-footer__socials">
+          <a href="https://www.instagram.com/toudoupet" target="_blank" rel="noopener" class="site-footer__social-icon" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@toudoupet" target="_blank" rel="noopener" class="site-footer__social-icon" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M15 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/>
+              <path d="M15 3c0 2.5 2 4.5 4.5 4.5"/>
+            </svg>
+          </a>
+          <a href="#" class="site-footer__social-icon" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M14 9h3V6h-3a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h3l1-3h-4V9a1 1 0 0 1 1-1Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Nos produits</h4>
+        <a href="product.html" class="site-footer__link">Brosse Autonettoyante</a>
+        <a href="product2.html" class="site-footer__link">Brosse à Vapeur</a>
+        <a href="pack.html" class="site-footer__link">Pack Duo</a>
+        <a href="catalogue.html" class="site-footer__link">Tous nos produits</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Informations</h4>
+        <a href="guide.html" class="site-footer__link">Guide d'utilisation</a>
+        <a href="about.html" class="site-footer__link">À propos</a>
+        <a href="contact.html" class="site-footer__link">Contact</a>
+        <a href="livraison.html" class="site-footer__link">Livraison</a>
+        <a href="retours-remboursements.html" class="site-footer__link">Retours &amp; remboursements</a>
+        <a href="faq.html" class="site-footer__link">FAQ</a>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Paiement sécurisé</h4>
+        <div class="site-footer__payments">
+          <span class="site-footer__payment-badge">Visa</span>
+          <span class="site-footer__payment-badge">Mastercard</span>
+          <span class="site-footer__payment-badge">PayPal</span>
+          <span class="site-footer__payment-badge">Apple Pay</span>
+        </div>
+        <p class="site-footer__mini-trust">🚚 Livraison rapide</p>
+        <p class="site-footer__mini-trust">🇫🇷 Entreprise française</p>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">© 2026 ToudouPet. Tous droits réservés.</p>
+      <div class="site-footer__legal-links">
+        <a href="mentions-legales.html" class="site-footer__legal-link">Mentions légales</a>
+        <a href="politique-confidentialite.html" class="site-footer__legal-link">Politique de confidentialité</a>
+        <a href="cgv.html" class="site-footer__legal-link">CGV</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  // Menu burger mobile
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    burgerBtn.classList.toggle('is-active', isOpen);
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Accordéons — une seule réponse ouverte à la fois PAR SECTION
+  // (chaque section .faq__list gère son propre accordéon indépendant)
+  const faqQuestions = document.querySelectorAll('.faq__question');
+  faqQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+      const item = question.closest('.faq__item');
+      const list = question.closest('.faq__list');
+      const isOpen = item.classList.contains('is-open');
+
+      list.querySelectorAll('.faq__item.is-open').forEach((openItem) => {
+        openItem.classList.remove('is-open');
+        openItem.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

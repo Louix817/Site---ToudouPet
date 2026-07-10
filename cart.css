@@ -1,0 +1,214 @@
+/* ================================================================
+   CART.CSS — Panier coulissant (drawer), partagé par toutes les pages
+   ================================================================ */
+
+body.cart-drawer-open {
+  overflow: hidden;
+}
+
+.cart-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cart-drawer.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cart-drawer__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 27, 24, 0.4);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.cart-drawer.is-open .cart-drawer__overlay {
+  opacity: 1;
+}
+
+.cart-drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-medium);
+  box-shadow: -8px 0 32px rgba(30, 27, 24, 0.12);
+}
+
+.cart-drawer.is-open .cart-drawer__panel {
+  transform: translateX(0);
+}
+
+/* --- En-tête --- */
+.cart-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-drawer__title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+.cart-drawer__close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--color-dark);
+  transition: background var(--transition-fast);
+}
+
+.cart-drawer__close:hover {
+  background: var(--color-bg-soft);
+}
+
+/* --- Liste des articles --- */
+.cart-drawer__items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-drawer__empty {
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--color-text-muted);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-item__thumb {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--color-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.cart-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-item__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item__price {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.cart-item__qty {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.cart-item__qty-btn {
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-dark);
+  transition: background var(--transition-fast);
+}
+
+.cart-item__qty-btn:hover {
+  background: var(--color-bg-soft);
+}
+
+.cart-item__qty-value {
+  min-width: 22px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cart-item__remove {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.cart-item__remove:hover {
+  background: var(--color-bg-soft);
+  color: var(--color-dark);
+}
+
+/* --- Pied du panier --- */
+.cart-drawer__footer {
+  padding: 20px 24px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.cart-drawer__subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+}
+
+/* ================================================================
+   RESPONSIVE — PANIER
+   ================================================================ */
+@media (max-width: 480px) {
+  .cart-drawer__panel {
+    max-width: 100%;
+  }
+}

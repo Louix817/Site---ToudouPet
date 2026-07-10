@@ -1,0 +1,219 @@
+/* ================================================================
+   CONTACT.CSS — Styles propres à la page Contact
+   Réutilise les tokens (:root), boutons (.btn), header/footer
+   déjà définis dans style.css.
+   ================================================================ */
+
+/* ================================================================
+   EN-TÊTE CONTACT
+   ================================================================ */
+.contact-header {
+  background: var(--color-bg);
+  padding: 40px 32px 8px;
+  text-align: center;
+}
+
+.contact-header__container {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.contact-header__title {
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.contact-header__subtitle {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* ================================================================
+   FORMULAIRE + INFOS DE CONTACT
+   ================================================================ */
+.contact-main {
+  background: var(--color-bg);
+  padding: 48px 32px 96px;
+}
+
+.contact-main__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* --- Formulaire --- */
+.contact-form {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form__label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.contact-form__input {
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--color-dark);
+  background: var(--color-bg-soft);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 13px 16px;
+  transition: border-color var(--transition-fast);
+}
+
+.contact-form__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: var(--color-white);
+}
+
+.contact-form__select {
+  cursor: pointer;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.contact-form__confirmation {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+/* --- Informations de contact --- */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.contact-info__icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info__label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.contact-info__value {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.contact-info__link {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent-light);
+}
+
+.contact-info__link:hover {
+  border-color: var(--color-accent);
+}
+
+.contact-info__socials {
+  background: var(--color-bg-soft);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.contact-info__socials .site-footer__socials {
+  margin-top: 10px;
+}
+
+.contact-info__socials .site-footer__social-icon {
+  background: var(--color-white);
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+}
+
+.contact-info__socials .site-footer__social-icon:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+/* ================================================================
+   RESPONSIVE — CONTACT
+   ================================================================ */
+@media (max-width: 900px) {
+  .contact-header {
+    padding: 32px 20px 8px;
+  }
+
+  .contact-main {
+    padding: 32px 20px 64px;
+  }
+
+  .contact-main__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+}
